@@ -264,3 +264,59 @@ Default-Information Originate
 
 r4: ping 8.8.8.8
 p1: ping 8.8.8.8
+
+TASK5:tunneling VPN:
+
+@VPNJP:
+config t
+no logging console
+no ip domain-lookup
+int gi 1
+ip add dhcp
+no shut
+int gi 2
+ip add dhcp
+no shut
+int gi 3
+ip add 10.10.10.1 255.255.255.0
+no shut
+
+@VPNPHP:
+config t
+no logging console
+no ip domain-lookup
+int gi 1
+ip add dhcp
+no shut
+int gi 2
+ip add dhcp
+no shut
+int gi 3
+ip add 10.20.20.1 255.255.255.0
+no shut
+
+TASK6: LALABAS SA EXAM NYO SA FEB/MARCH
+HOW TO CONFIGURE SSHv2. or SecureShell
+both: vpnJP/vpnPH:
+config t
+ip domain-name rivanit.com
+crypto key generate rsa
+ip ssh version 2
+
+SITE TO SITE VPN:
+vpn = Hash(protect original data) = sha256/sha1/md5
+    + Encryption (Hide the Data anybody!
+    AES: Advanced Encyption Standard
+    DES: digital Enc Standard
+    RSA: rivest,shaMir,Adelman)
+     + Tunnel : hide your IPAddress
+        PPTP, L2TP, GRE, ipsec
+        point to point tunnel protocol, 
+How to configure Site to Site VPN JP to PH:
+https://
+
+TASK6: Fundamentals of Cisco network Security:
+nmap -sP 10.3.3.0/24
+nmap -Pnv 10.3.3.111
+
+cmd
